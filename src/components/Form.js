@@ -1,7 +1,7 @@
 import React,{useRef} from 'react'
 
 
-export default function Form() {
+export default function Form(props) {
 
     const titleRef = useRef();
     const textRef = useRef();
@@ -14,7 +14,8 @@ export default function Form() {
             text:textRef.current.value,
             date:dateRef.current.value
         }
-        console.log(obj)
+       props.addMovies(obj);
+       
     }
 
     return (
